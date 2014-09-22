@@ -3,6 +3,9 @@ class ApplicationController < Sinatra::Base
   # Configuration
   ########################
   # allow put/delete forms in browsers that don't support it.
+  # we set this variable to the root of our project
+  # whenever the application file (ie, controllers)
+  # are not in the root of the project
   set :app_file, File.expand_path(File.dirname(__FILE__), "../")
   helpers ApplicationHelper
 
