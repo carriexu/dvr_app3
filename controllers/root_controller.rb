@@ -1,3 +1,4 @@
+require 'pry'
 class RootController < ApplicationController
 
   ########################
@@ -34,18 +35,23 @@ class RootController < ApplicationController
     redirect to('/')
   end
 
+  get('/viewers/new') do
+    render(:erb, :'/viewer/new')
+  end
+
   # viewer SHOW
   get('/viewers/:id') do
     @viewer = Viewer.find(id: params[:id])
     render(:erb, :'/viewer/show')
   end
 
-  get('/viewers/new') do
-    render(:erb, :'/viewer/new')
-  end
 
   post('/viewers') do
-    @viewer = Viewer.create(name: params[:user_name])
-    redirect to("/viewers/:id")
+    @id = params[:id]
+    # @viewer = Viewer.create(name: params[:user_name])
+    @viewer = Viewer.create(params)
+    redirect to("/viewers/#{@id}")
   end
+
+
 end
