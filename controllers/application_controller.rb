@@ -23,10 +23,8 @@ class ApplicationController < Sinatra::Base
     register Sinatra::Reloader
     # $redis = Redis.new
   end
-  # configure :production do
-  #   uri = URI.parse(ENV['REDISTOGO_URL'])
-  #   $redis = Redis.new({:host => uri.host,
-  #                       :port => uri.port,
-  #                       :password => uri.password})
-  # end
+
+# add a flash hash to our website! https://github.com/treeder/rack-flash
+  use Rack::Flash
+
 end

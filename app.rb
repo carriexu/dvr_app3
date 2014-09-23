@@ -1,9 +1,6 @@
-class RootController < ApplicationController
-
-  ########################
-  # Routes
-  ########################
-    get('/') do
+class App < ApplicationController
+  # session NEW
+  get('/') do
     if session[:current_user] # if there is a user set in the session
       redirect to("/viewers/#{session[:current_user][:id]}")
     else
@@ -37,15 +34,6 @@ class RootController < ApplicationController
   # viewer SHOW
   get('/viewers/:id') do
     @viewer = Viewer.find(id: params[:id])
-    render(:erb, :'/viewer/show')
-  end
-
-  get('/viewers/new') do
-    render(:erb, :'/viewer/new')
-  end
-
-  post('/viewers') do
-    @viewer = Viewer.create(name: params[:user_name])
-    redirect to("/viewers/:id")
+    render(:erb, :'viewers/show')
   end
 end
