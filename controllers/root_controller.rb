@@ -47,9 +47,10 @@ class RootController < ApplicationController
 
 
   post('/viewers') do
-    @id = params[:id]
+    # @id = params[:id]
     # @viewer = Viewer.create(name: params[:user_name])
     @viewer = Viewer.create(params)
+    binding.pry
     redirect to("/viewers/#{@id}")
   end
 
