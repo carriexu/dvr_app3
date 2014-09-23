@@ -8,6 +8,7 @@ require 'sequel'
 require 'yaml'
 
 # connect to db
+
 DB = Sequel.connect("postgres://localhost/dvr_development")
 
 # require models (important to do this after connecting to the DB, remember!)

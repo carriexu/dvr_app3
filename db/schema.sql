@@ -1,6 +1,8 @@
+
 DROP DATABASE IF EXISTS dvr_development;
 CREATE DATABASE dvr_development;
 \c dvr_development
+
 
 DROP TABLE IF EXISTS stations;
 DROP TABLE IF EXISTS series;

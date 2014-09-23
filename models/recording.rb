@@ -4,4 +4,5 @@
 # currently_recording boolean
 
 class Recording < Sequel::Model
+  many_to_one(:viewers)
 end

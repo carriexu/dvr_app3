@@ -1,4 +1,5 @@
 class ApplicationController < Sinatra::Base
+
 ########################
   # Configuration
   ########################
@@ -16,6 +17,7 @@ class ApplicationController < Sinatra::Base
   # session_secret will change with every start of the application
   # if we want to run shotgun, which creates new application instances
   # we must manually set session_secret
+
   set :session_secret, 'super secret'
 
   configure :test, :development do
