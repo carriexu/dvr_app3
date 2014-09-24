@@ -1,4 +1,3 @@
-
 puts "running create genre table"
 Sequel.migration do
   # if we an infer out the opposite action we can change
